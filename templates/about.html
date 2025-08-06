@@ -1,4 +1,8 @@
 {% load static %}
+
+{% extends 'home.html'%}
+
+{% block body %}
 <!DOCTYPE html>
 
 <html>
@@ -12,7 +16,16 @@
             <h1>About {{rest_name}}</h1>
         </header>
 
-        <nav>
+        <div style="padding: 20px; max-width: 800px; margin: auto; text-align: center;">
+            <img src="{% static 'home/restaurant.jpg' %}" width="50px"  height="50px">
+            <p> Welocome to {{ rest_name }}! we are dedicated to serving delicious meals made from the freshest ingredints
+                Our mission is to provide a warm and inviting atmosphere where friends and family can enjoy quality food togather,
+            </p>
+        </div>
+
+        
             
     </body>
 </html>
+
+{% end block %}
