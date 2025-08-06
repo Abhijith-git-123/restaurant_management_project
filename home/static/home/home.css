@@ -19,5 +19,29 @@ nav{
 }
 
 nav a{
+   
+    color: wheat;
+    text-decoration: none;
+    margin: 0 10px;
     
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer{
+    background-color: #4CAF50;
+    color: wheat;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
