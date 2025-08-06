@@ -14,7 +14,7 @@ def home_main(request):
 
 
 
-def anout_page(request):
+def about_page(request):
 
     data = Restaurant.objects.all()
 
@@ -23,3 +23,8 @@ def anout_page(request):
     }
 
     return render(request, 'about.html',context)
+
+
+
+def 404_not_found(request):
+    return render(request, '404.html')
