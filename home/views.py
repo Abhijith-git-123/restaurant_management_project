@@ -11,3 +11,15 @@ def home_main(request):
         'rest_name':data.name
     }
     return render(request, 'home.html',context)
+
+
+
+def anout_page(request):
+
+    data = Restaurant.objects.all()
+
+    context = {
+        'rest_name':data.name
+    }
+
+    return render(request, 'about.html',context)
