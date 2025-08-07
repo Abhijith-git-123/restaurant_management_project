@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from datetime import datetime
 from .models import Restaurant
 
 import logging
@@ -10,8 +10,9 @@ def home_main(request):
     data = Restaurant.objects.first()
 
     context = {
-        'rest_name':data.name
-        'phone':data.phone
+        'rest_name':data.name,
+        'phone':data.phone,
+        'current_year':datetime.now().year
     }
     return render(request, 'home.html',context)
 
@@ -26,7 +27,6 @@ def about_page(request):
     }
 
     return render(request, 'about.html',context)
-
 
 
 def 404_not_found(request):
