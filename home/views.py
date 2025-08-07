@@ -9,6 +9,7 @@ def home_main(request):
 
     context = {
         'rest_name':data.name
+        'phone':data.phone
     }
     return render(request, 'home.html',context)
 
