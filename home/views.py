@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from .models import Restaurant
 
+import logging
+
 # Create your views here.
 
 def home_main(request):
@@ -43,16 +45,24 @@ def contact_us(request):
     return render(request, 'contact.html')
 
 
-def list_menu(request):
-    menu_items = [
-        {'name':'Chicken Biriyani', 'Price':250},
-        {'name': 'Paneer Butter Masala', 'Price': 180},
-        {'name': 'Veg Biriyani', 'Price': 220},
-        {'name': 'chicken Tikka', 'Price': 300}
-    ]
+logger = logging.getLogger(__name__)
 
-    context = {
-        'rest_name': 'Thiruvonam Restaurant',
-        'menu_items': menu_items,
-    }
-    return render(request,'menu.html',context)
+def list_menu(request):
+
+    try:
+        menu_items = [
+            {'name':'Chicken Biriyani', 'Price':250},
+            {'name': 'Paneer Butter Masala', 'Price': 180},
+            {'name': 'Veg Biriyani', 'Price': 220},
+            {'name': 'chicken Tikka', 'Price': 300}
+        ]
+
+        context = {
+            'rest_name': 'Thiruvonam Restaurant',
+            'menu_items': menu_items,
+        }
+        return render(request,'menu.html',context)
+
+    except Exception as e:
+        logger.error("Error in menu_view: %s" e)
+        return HttpResponseServerError("something went wrong.please try agian later")
