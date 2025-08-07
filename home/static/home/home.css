@@ -26,6 +26,13 @@ header h2{
     font-size: 1.2em;
 }
 
+.logo{
+    max-width: 150px;
+    height: auto;
+    display: black;
+    margin: 0 auto 15px auto;
+}
+
 nav{
     background-color: #222;
     padding: 12px 0;
