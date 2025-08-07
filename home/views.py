@@ -29,3 +29,15 @@ def about_page(request):
 
 def 404_not_found(request):
     return render(request, '404.html')
+
+
+def contact_us(request):
+
+    data = Restaurant.objects.all()
+
+    contect = {
+        'rest:name':data.aname,
+        'phone':data.phone,
+        'email':data.email
+    }
+    return render(request, 'contact.html')
