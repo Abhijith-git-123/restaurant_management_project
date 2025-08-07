@@ -1,0 +1,48 @@
+{% load static %}
+{% extends 'home.html' %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            CONTACT US
+        </title>
+    </head>
+    <body>
+        <hr>
+        <section>
+            <h3>Get IN Touch</h3>
+            <p>Email: </p>
+            <p>Phone: +91{{ phone }}</p>
+            <p>Address: </p>
+
+        </section>
+    <hr>
+
+    <section>
+        <h3>Send Us a Message</h3>
+        <form method="post">
+            <p>
+                <label for="name">Nmae:</label><br>
+                <input type="text" id = "name" name="name" required>
+            </p>
+
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="eail" id="email" name = "email" required>
+            </p>
+
+            <p>
+                <label for="message">Message:</label><br>
+                <textarea id = "message" name = "message" rows="5" required></textarea>
+            </p>
+            <p>
+                <button type = "submit"></button>
+            </p>
+        </form>
+    </section>
+    </body>
+</html>
+
+{% end block %}
