@@ -66,3 +66,15 @@ def list_menu(request):
     except Exception as e:
         logger.error("Error in menu_view: %s" e)
         return HttpResponseServerError("something went wrong.please try agian later")
+
+
+
+
+def reservation(request):
+
+    data = Restaurant.objects.all()
+
+    context = {
+        'phone':data.phone
+    }
+    return render(request, 'reservation.html',context)
