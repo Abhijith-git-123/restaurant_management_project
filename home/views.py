@@ -2,6 +2,8 @@ from django.shortcuts import render
 from datetime import datetime
 from .models import Restaurant
 
+from .froms import 
+
 import logging
 
 # Create your views here.
@@ -78,3 +80,7 @@ def reservation(request):
         'phone':data.phone
     }
     return render(request, 'reservation.html',context)
+
+
+
+def feedback()
