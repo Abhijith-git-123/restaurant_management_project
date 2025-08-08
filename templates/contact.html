@@ -22,7 +22,8 @@
 
     <section>
         <h3>Send Us a Message</h3>
-        <form method="post">
+        <form method="post" id ="contactform" onsubmit="return validateForm()">
+            {% csrf_token %}
             <p>
                 <label for="name">Nmae:</label><br>
                 <input type="text" id = "name" name="name" required>
@@ -38,7 +39,7 @@
                 <textarea id = "message" name = "message" rows="5" required></textarea>
             </p>
             <p>
-                <button type = "submit"></button>
+                <button type = "submit">Send</button>
             </p>
         </form>
     </section>
