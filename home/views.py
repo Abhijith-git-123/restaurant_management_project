@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from datetime import datetime
 from .models import Restaurant
 
-from .froms import 
+from .froms import FeedbackForm
 
 import logging
 
@@ -83,4 +83,14 @@ def reservation(request):
 
 
 
-def feedback()
+def feedback(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('feedback_thankyou')
+
+        else:
+            from = FeedbackForm()
+    return render(request, 'feedback.html',{'form':form})
