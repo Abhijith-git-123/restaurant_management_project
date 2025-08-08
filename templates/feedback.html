@@ -1,4 +1,24 @@
+{% extends 'home.html' %}
+{% block body %}
+
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Feddback</title>
+    </head>
+
+    <body>
+        <h2>Leave Your Feddback</h2>
+
+        <form method="post">
+            {% csrf_tocken %}
+
+            {{ form.as_p }}
+
+            <button type="subit">Submit Feedback
+            </button>
+        </form>
+    </body>
     
 </html>
+{% end block %}
