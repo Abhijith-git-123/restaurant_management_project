@@ -49,7 +49,14 @@ def contact_us(request):
 
 
 def contact_us_post(request):
-    name = request.POST[]
+    name1 = request.POST['name']
+    email11 = request.POST['email']
+    message1 = request.POST['message']
+
+    obj = contact()
+    obj.
+
+    
 
     return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
 
