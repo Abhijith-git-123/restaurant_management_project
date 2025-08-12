@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Menu List
+        </title>
+        <body>
+            <div class = "container">
+                <h2>Our Menu</h2>
+                <div class="menu">
+                    {% for item in menu_item %}
+                    <div clas="menu_item">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                        <strong>Price: {{ item.price }}</strong>
+                    </div>
+                    {% empty %}
+                    <p>No Menu item avilable at the moment.</p>
+
+                    {% endfor %}
+                </div>
+            </div>
+
+        </body>
+    </head>
+</html>
+
+{% endblock %}
