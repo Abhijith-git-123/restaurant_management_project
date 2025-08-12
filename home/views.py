@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from datetime import datetime
 from .models import Restaurant
+from django.http import HttpResponse
 
 from .froms import FeedbackForm
 
@@ -45,6 +46,13 @@ def contact_us(request):
         'email':data.email
     }
     return render(request, 'contact.html')
+
+
+def contact_us_post(request):
+    name = request.POST[]
+
+    return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
+
 
 
 logger = logging.getLogger(__name__)
