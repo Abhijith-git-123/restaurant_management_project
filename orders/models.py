@@ -22,3 +22,24 @@ class order(models.Model):
         return f"Order #{self.id} by {self.customer.username} - {self.order_status}"
 
 
+@api_view(['GET'])
+def get_menu(request):
+    menu = [
+        {
+            "name":"chichen pizza",
+            "description":"classic pizza with tomato sauce, and chicke",
+            "price":299
+        },
+
+        {
+            "name":"veggie Burger",
+            "description":"Loaded veggie patty with lettuce, tomato, and cheese",
+            "price":199
+        },
+        {
+            "name":"Pasta Allfredo",
+            "description":"Creamy pasta with mushroom and permesan cheese",
+            "price":249
+        }
+    ]
+    return Response(menu)
