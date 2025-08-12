@@ -39,7 +39,7 @@ def get_menu(request):
         {
             "name":"Pasta Allfredo",
             "description":"Creamy pasta with mushroom and permesan cheese",
-            "price":249
+            "price":247
         }
     ]
     return Response(menu)
