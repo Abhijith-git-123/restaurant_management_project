@@ -11,4 +11,4 @@ class OrderAdmin(admin.ModelAdmin):
     filter_horizontal = ('order_items',)
 
 
-admin.site.Register()
+admin.site.Register(order OrderAdmin)
