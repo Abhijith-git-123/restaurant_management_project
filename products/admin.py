@@ -17,4 +17,6 @@ class MenuAdmin(admin.ModelAdmin):
     search_field = ('name', 'description')
     list_filter = ('price',)
 
-admin.site.register(M)
+admin.site.register(Item, MenuAdmin)
+
+
