@@ -50,13 +50,14 @@ def contact_us(request):
 
 def contact_us_post(request):
     name1 = request.POST['name']
-    email11 = request.POST['email']
+    email1 = request.POST['email']
     message1 = request.POST['message']
 
     obj = contact()
-    obj.
-
-    
+    obj.name = name1
+    obj.email = email1
+    obj.message = message1
+    obj.save()
 
     return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
 
