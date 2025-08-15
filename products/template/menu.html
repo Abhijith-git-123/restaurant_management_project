@@ -1,8 +1,28 @@
+{% load static %}
+{% extends 'home.html' %}
+{% block body %}
 <!DOCTYPE html>
 <html>
     <head>
     <title>
         Menu 
     </title>
+    <link rel="stylesheet" href="{% static 'products/menu.css' %}">
     </head>
+    <body>
+        <div class="menu-container">
+            {% for item in items %}
+              <div class="menu-item">
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+                <p class="price">{{ item.Price }}</p>
+              </div>
+
+            {% empty %}
+               <p>No menu items available yet.</p>
+
+            {% endfor %}
+        </div>
+    </body>
 </html>
+{% end block %}
