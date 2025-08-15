@@ -8,3 +8,13 @@ class Item(models.Model):
 
     def __str__(self):
         return str(self.item_name)
+
+
+
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TextField(blank=True)
+    price = models.DecimalField(max_length=6,decimal_places=2)
+
+    def __str__(self):
+        return self.name
