@@ -42,6 +42,28 @@
             <p>We're delighted to Serve you at {{ rest_name }} - where great food meets great People.</p>
         </div>
 
+        <section class="location-section">
+            <h2>Visit Us</h2>
+            <div class="address-details">
+                <p><strong>{{ rest_name }}</strong></p>
+                <p>123 MG Road, Near City Mall</p>
+                <p>Kochi, Kerala - 682001</p>
+                <p><strong>Phone:</strong> +91{{ Phone }}</p>
+                <p><strong>Email:</strong>contact@{{ rest_name|lower }}.com</p>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                     src="https://www.google.com/maps/embed?pb = map_link"
+                     allowfullscreen=""
+                     loading = "lazy"
+                     referrerpolicy="no-referrer-when-dowgrade">
+                </iframe>
+            </div>
+
+        </section>
+
+
         <footer>
             <p><strong>Our Hours:</strong>Mon-Fri: 11am - 9pm, sat-sun:10am - 10pm</p>
             &copy; {{ current_year }} {{rest_name}}.All right reserved. | Contact : +91{{ phone }}
