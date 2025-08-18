@@ -15,6 +15,7 @@ def home_main(request):
     context = {
         'rest_name':data.name,
         'phone':data.phone,
+        'address':data.address
         'current_year':datetime.now().year
     }
     return render(request, 'home.html',context)
