@@ -3,7 +3,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 
-from .models import Item
+from .models import *
 from .serializers import ItemSerializer
 
 '''
@@ -24,3 +24,24 @@ class ItemView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+def add_menu_item(request):
+    return render(request, 'add_item.html')
+
+
+def add_menu_item_post(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        description = request.POST.get("description")
+        price = request.POST.get("price")
+        image = request.FILES.get("image")
+
+        MenuItem.objects.create(
+            name = name,
+            description = description,
+            price=price,
+            image=image
+        )
+        return redirect("menu_list")
