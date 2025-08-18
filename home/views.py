@@ -11,6 +11,7 @@ import logging
 
 def home_main(request):
     data = Restaurant.objects.first()
+    menu_items = Menu
 
     context = {
         'rest_name':data.name,
