@@ -32,6 +32,25 @@
 
         </nav>
 
+        <section class="menu-section">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                {% for item in menu_items %}
+                <div class="menu-card">
+                    {% if item.image %}
+                        <img src="{{ item.image.url }}" alt="{{ item.name }}" class="menu-img">
+                    {% endif %}
+                    <h3>{{ item.name }}</h3>
+                    <p>{{ item.description }}</p>
+                    <p><strong>{{ item.price }}</strong></p>
+                </div>
+                {% empty %}
+                   <p>No menu items available yet.</p>
+                {% endfor %}
+            </div>
+            <a href="{% url 'menu-lis' %}"class="see-more">See Full Menu</a>
+        </section>
+
        
 
 
