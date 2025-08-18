@@ -11,13 +11,15 @@ import logging
 
 def home_main(request):
     data = Restaurant.objects.first()
-    menu_items = Menu
+    menu_items = MenuItem.objects.all()[:6]
 
     context = {
         'rest_name':data.name,
         'phone':data.phone,
-        'address':data.address
-        'current_year':datetime.now().year
+        "email":data.email,
+        'address':data.address,
+        'current_year':datetime.now().year,
+        'menu_items':menu_items,
     }
     return render(request, 'home.html',context)
 
