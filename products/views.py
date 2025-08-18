@@ -45,3 +45,7 @@ def add_menu_item_post(request):
             image=image
         )
         return redirect("menu_list")
+
+def list_menu(request):
+    data = MenuItem.objects.all()
+    return render(request, 'menu.html',{'data':data})
