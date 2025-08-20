@@ -174,3 +174,34 @@ footer{
     font-weight: bold;
     color: #333;
 }
+
+.search-container {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+
+.search-input {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-button {
+    padding:6px 12px;
+    margin-left: 5px;
+    background: #007bff;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background: #0056b3;
+}
