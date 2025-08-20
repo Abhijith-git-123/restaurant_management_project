@@ -32,6 +32,16 @@
 
         </nav>
 
+        <section class="hours-section">
+            <h2>Our Opening Hours</h2>
+            <ul>
+                {% for day, hours in opening_hours.items %}
+                    <li><strong>{{ day }}:</strong>{{ hours }}</li>
+
+                {% endfor %}
+            </ul>
+        </section>
+
         <section class="menu-section">
             <h2>Our Menu</h2>
             <div class="menu-grid">
