@@ -22,7 +22,7 @@
 
     <section>
         <h3>Send Us a Message</h3>
-        <form method="post" id ="contactform" onsubmit="return validateForm()" action="/contact_us_post">
+        <!-- <form method="post" id ="contactform" onsubmit="return validateForm()" action="/contact_us_post">
             {% csrf_token %}
             <p>
                 <label for="name">Nmae:</label><br>
@@ -40,8 +40,28 @@
             </p>
             <p>
                 <button type = "submit">Send</button>
-            </p>
-        </form>
+            </p> -->
+
+            <form method="post" action="/cotact_us_post">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+                <button type="submit">Send</button>
+            </form>
+
+            {% if form.errors %}
+            <div style="color: red;">
+                <ul>
+                    {% for field, error in form.errors.items %}
+                        <li><strong>{{ field }}:</strong>{{ errors|jion:", "}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endif %}
+               
+        
     </section>
     </body>
 </html>
