@@ -63,6 +63,22 @@ def contact_us_post(request):
     obj.message = message1
     obj.save()
 
+    #send Email Notification to restaurnt
+
+    subject = f"New Contact Message from {name1}"
+
+    message = f""" You receive a new message from your website:
+
+    Name: {name1}
+    Email: {email1}
+    Message: {message1}
+
+    """
+    restaurnt_email = ""
+
+    
+
+
     return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
 
 
