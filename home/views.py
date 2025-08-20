@@ -20,6 +20,7 @@ def home_main(request):
         'address':data.address,
         'current_year':datetime.now().year,
         'menu_items':menu_items,
+        'opening_hours':data.opening_hours,
     }
     return render(request, 'home.html',context)
 
