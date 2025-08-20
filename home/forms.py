@@ -8,3 +8,6 @@ class FeedbackForm(forms.ModelForm):
     widget = {
         'comment':forms.Textarea(attrs = {'row':5,'placeholder':'enter your feedback..'})
     }
+
+
+    
