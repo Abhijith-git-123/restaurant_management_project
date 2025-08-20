@@ -24,6 +24,7 @@ class Restaurant(models.Model):
     phone = models.CharField(max_length=30)
     email = models.CharField(max_length=50)
     address = models.TextField()
+    opening_hours = models.JSONField(default = dict, blank=True)
 
 
     def _str__(self):
