@@ -3,7 +3,7 @@ from datetime import datetime
 from .models import Restaurant
 from django.http import HttpResponse
 
-from .froms import FeedbackForm
+from .froms import FeedbackForm,ContactForm
 
 import logging
 
@@ -50,45 +50,58 @@ def contact_us(request):
         'phone':data.phone,
         'email':data.email
     }
-    return render(request, 'contact.html')
+
+    form = ContactForm()
+    return render(request, 'contact.html',contact, {'form':form})
 
 
 def contact_us_post(request):
-    name1 = request.POST['name']
-    email1 = request.POST['email']
-    message1 = request.POST['message']
+    # name1 = request.POST['name']
+    # email1 = request.POST['email']
+    # message1 = request.POST['message']
 
-    obj = contact()
-    obj.name = name1
-    obj.email = email1
-    obj.message = message1
-    obj.save()
+    # obj = contact()
+    # obj.name = name1
+    # obj.email = email1
+    # obj.message = message1
+    # obj.save()
+
+    if request.method == 'POST':
+
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+
 
     #send Email Notification to restaurnt
 
-    subject = f"New Contact Message from {name1}"
+            subject = f"New Contact Message from {name1}"
 
-    message = f""" You receive a new message from your website:
+            message = f""" You receive a new message from your website:
 
-    Name: {name1}
-    Email: {email1}
-    Message: {message1}
+            Name: {name1}
+            Email: {email1}
+            Message: {message1}
 
-    """
-    restaurnt_email = "myrestaurant@gmail.com"
+            """
+            restaurnt_email = "myrestaurant@gmail.com"
 
-    send_mail(
-        subject,
-        message,
-        'myrestaurant@gmail.com',
-        [restaurnt_email],
-        fail_silently = False,
-    )
+            send_mail(
+                subject,
+                message,
+                'myrestaurant@gmail.com',
+                [restaurnt_email],
+                fail_silently = False,
+            )
 
-    
+        
 
 
-    return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
+            return HttpResponse("<script>alert('details submitted successfully');window.location='/'</script>")
+
+        else:
+            return render(request, 'contact.html', {'form':form})
 
 
 
