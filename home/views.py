@@ -74,7 +74,15 @@ def contact_us_post(request):
     Message: {message1}
 
     """
-    restaurnt_email = ""
+    restaurnt_email = "myrestaurant@gmail.com"
+
+    send_mail(
+        subject,
+        message,
+        'myrestaurant@gmail.com',
+        [restaurnt_email],
+        fail_silently = False,
+    )
 
     
 
