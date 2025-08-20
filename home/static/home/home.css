@@ -205,3 +205,25 @@ footer{
 .search-button:hover {
     background: #0056b3;
 }
+
+.hours-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.hours-section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.hours-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hours-section li {
+    padding: 4px 0;
+    font-size: 16px;
+}
