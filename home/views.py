@@ -21,6 +21,7 @@ def home_main(request):
         'current_year':datetime.now().year,
         'menu_items':menu_items,
         'opening_hours':data.opening_hours,
+        'logo':data
     }
     return render(request, 'home.html',context)
 
