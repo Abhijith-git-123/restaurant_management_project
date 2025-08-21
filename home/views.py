@@ -39,7 +39,10 @@ def about_page(request):
     data = Restaurant.objects.all()
 
     context = {
-        'rest_name':data.name
+        'rest_name':data.name,
+        'history':data.history,
+        'mission':data.mission,
+        'logo':data.logo,
     }
 
     return render(request, 'about.html',context)
