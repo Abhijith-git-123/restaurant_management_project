@@ -3,6 +3,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from products.models import Item
 
+from products.import MenuItem
+
 
 class order(models.Model):
     STATUS_CHOICES = [
@@ -43,3 +45,14 @@ def get_menu(request):
         }
     ]
     return Response(menu)
+
+
+
+class Cart(models.Model):
+    user = models.Foreignkey(User, on_delete=models.CASCADE)
+    item = models.Foreignkey(MenuItem, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+
+
+    def __str__(self):
+        return f"{self.user.username} - {self.item.name} ({self.quantity})"
