@@ -74,6 +74,19 @@ nav a:hover::after{
     width:100%;
 }
 
+
+.cart-info {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6600;
+    background: #fff4e6;
+    padding: 8px 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 10px;
+
+}
+
 .container {
 
     max-width: 800px;
