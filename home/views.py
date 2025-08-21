@@ -5,6 +5,8 @@ from django.http import HttpResponse
 
 from .froms import FeedbackForm,ContactForm
 
+from orders.models import Cart
+
 import logging
 
 # Create your views here.
@@ -12,6 +14,10 @@ import logging
 def home_main(request):
     data = Restaurant.objects.first()
     menu_items = MenuItem.objects.all()[:6]
+
+    cart_count = 0
+    if request.user.is_authenticated:
+        cart_count = Cart.objects.filter(user = request.user).count()
 
     context = {
         'rest_name':data.name,
@@ -21,6 +27,7 @@ def home_main(request):
         'current_year':datetime.now().year,
         'menu_items':menu_items,
         'opening_hours':data.opening_hours,
+        'cart_count':cart_count,
        
     }
     return render(request, 'home.html',context)
