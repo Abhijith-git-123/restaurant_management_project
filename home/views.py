@@ -163,3 +163,14 @@ def feedback(request):
         else:
             from = FeedbackForm()
     return render(request, 'feedback.html',{'form':form})
+
+
+def faq(request):
+    faq = [
+        {"question":"What are Your opening hour?", "answer": "we are open Mon-Fri: 11am-9pm, Sat-Sun: 10am - 10pm"},
+        {"question":"Do you offer home delivery?", "answer": "Yes, we provide home delivary within a 5km radious."},
+        {"question":"Can I book a table online?", "answer": "Currently, we only accept walk-in customers, but online booking is coming soon!"},
+        {"question":"Do you have vegitarian options?", "answer": "Absolutely! we have a wide range of vegitarian and vegan dishes."},
+    ] 
+
+    return render(request, "faq.html", {"faqs": faqs})
