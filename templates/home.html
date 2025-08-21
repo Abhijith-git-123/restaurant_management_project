@@ -12,7 +12,14 @@
             <img src="{% restaurant.logo.url %} alt="{{ rest_name }} Logo" class="logo">
             <h1 style="font:bold">welcome to {{rest_name}}</h1>
             <h2>Phone : +91{{phone}}</h2>
+
+            <div class="cart-info">
+
+                Cart : <span>{{ cart_count }}</span> items
+            </div>
         </header>
+
+       
 
         <nav>
             <a href="/about">HOME</a>
