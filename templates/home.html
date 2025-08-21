@@ -9,7 +9,7 @@
 
     <body style="font-family:Arial, sans-serif; magin:0; background-color: #f9f9f9; color:#3333;" >
         <header >
-            <img src="{%  static 'home/rest_logo.jpeg'%} alt="{{ rest_name }} Logo" class="logo">
+            <img src="{% restaurant.logo.url %} alt="{{ rest_name }} Logo" class="logo">
             <h1 style="font:bold">welcome to {{rest_name}}</h1>
             <h2>Phone : +91{{phone}}</h2>
         </header>
