@@ -131,6 +131,37 @@ nav a:hover::after{
 }
 
 
+.phone-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.phone-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.phone-number {
+    font-size: 36px;
+    font-weight: 700;
+    background: white;
+    color: #ff7e5f;
+    display: inline-block;
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
 
 footer{
     background-color: #4CAF50;
