@@ -27,6 +27,9 @@ class Restaurant(models.Model):
     opening_hours = models.JSONField(default = dict, blank=True)
     logo = models.ImageField(upload_to = 'restaurant_logos/',blank=True,null=True)
 
+    history = models.TextField(blank=True, null=True)
+    mission = models.TextField(blank=True, null=True)
+
 
     def _str__(self):
         return self.name
