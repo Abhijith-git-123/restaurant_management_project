@@ -25,6 +25,7 @@ class Restaurant(models.Model):
     email = models.CharField(max_length=50)
     address = models.TextField()
     opening_hours = models.JSONField(default = dict, blank=True)
+    logo = models.ImageField(upload_to = 'restaurant_logos/',blank=True,null=True)
 
 
     def _str__(self):
