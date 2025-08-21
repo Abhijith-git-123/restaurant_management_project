@@ -28,6 +28,8 @@ def home_main(request):
         'menu_items':menu_items,
         'opening_hours':data.opening_hours,
         'cart_count':cart_count,
+        'current_datetime':datetime.now(),
+
        
     }
     return render(request, 'home.html',context)
