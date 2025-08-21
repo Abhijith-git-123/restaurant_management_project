@@ -29,6 +29,7 @@
             <a href="/reservation">Reservation</a>
             <a href="/add-item">Add Item</a>
             <a href="/list-item">List Items</a>
+            <a href="{% url 'faq' %}"></a>
             <div class="search-container">
                 <form action="#" method="GET">
                     <input type="text" name="q" value="{{ request.GET.q }}"placeholder="Search for menu items..." class="search-input">
