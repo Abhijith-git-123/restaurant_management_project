@@ -1,0 +1,25 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'home/faq.css' %}">
+
+<div class="faq-section">
+
+    <h1>Frequently Asked Question</h1>
+
+    <div class="faq-container">
+        {% for item in faqs %}
+           <div class="faq-item">
+
+              <h3 class="faq-question">{{ item.question }}</h3>
+              <p class="faq-answer">{{ item.answer }}</p>
+           </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
