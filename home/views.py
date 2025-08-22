@@ -11,6 +11,10 @@ import logging
 
 # Create your views here.
 
+
+
+
+
 def home_main(request):
     data = Restaurant.objects.first()
     menu_items = MenuItem.objects.all()[:6]
