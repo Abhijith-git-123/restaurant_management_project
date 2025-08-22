@@ -11,7 +11,20 @@ import logging
 
 # Create your views here.
 
+def base(request):
+    data = Restaurant.objects.first()
 
+    cart_count = 0
+    if request.user.is_authenticated:
+        cart_count = Cart.objects.filter(user = request.user).count()
+
+    context = {
+        'rest_name':data.name,
+        'phone':data.phone,
+        'current_year':datetime.now().year,
+        'cart_count':cart_count,
+    }
+    return render(request, 'base.html',context)
 
 
 
