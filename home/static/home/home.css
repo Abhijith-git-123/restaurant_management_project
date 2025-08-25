@@ -87,25 +87,45 @@ nav a:hover::after{
 
 }
 
-.container {
-
-    max-width: 800px;
-    margin: 40px  auto;
-    background-color: #fff;
-    padding: 40px  30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-   
+.welcome-container {
+    text-align: center;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #fff8f0, #fefefe);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
 }
 
-.container h2{
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #4CAF50;
+.welcome-container h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 15px;
 }
-.container P{
-    font-size: 1.1em;
+
+.welcome-container .welcome-text {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.8;
 }
+
+.welcome-container strong {
+    color: #e67e22;
+}
+
+.welcome-container em {
+    color: #16a085;
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
 
 .location-section{
     padding:20px;
