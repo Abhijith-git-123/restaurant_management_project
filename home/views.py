@@ -28,6 +28,10 @@ def base(request):
 
 
 
+def login(request):
+    return render(request,'login.html')
+
+
 def home_main(request):
     data = Restaurant.objects.first()
     menu_items = MenuItem.objects.all()[:6]
