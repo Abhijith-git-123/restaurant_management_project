@@ -167,32 +167,68 @@ nav a:hover::after{
 
 .phone-section {
     text-align: center;
-    padding: 50px 20px;
+    padding: 30px 20px;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
-    border-radius: 15px;
-    margin: 30px auto;
-    max-width: 600px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin: 50px auto;
+    max-width: 650px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+
 }
 
+
+.phone-section::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15), transparent 70%);
+    animation: pulse 6s infinite;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0% {transform: scale(0.8); opacity: 0.6;}
+    50% {transform:scale(1.2); opacity: 0.3; }
+    100% { transform: scale(0.8); opacity: 0.6;}
+}
+
+
+
 .phone-section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 30px;
+    margin-bottom: 20px;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    position: relative;
+    z-index: 1;
 }
 
 .phone-number {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 38px;
+    font-weight: 800;
     background: white;
     color: #ff7e5f;
     display: inline-block;
     padding: 15px 40px;
-    border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 60px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.phone-number:hover {
+    transform: scale(1.0.8);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+    color: #e74c3c;
+    cursor: pointer;
 }
 
 
