@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="confirmation-container">
+    <h1>Order Confirmed !</h1>
+    <p>Thank you for ordering from <strong>{{ rest_name }}</strong></p>
+    <p>Your order number is: <strong> #{{ order_number }}</strong></p>
+    <a href="{% url 'list_menu' %}" class="btn">Back to Menu</a>
+</div>
+
+{% endblock %}
