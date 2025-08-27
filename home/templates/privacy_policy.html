@@ -1,0 +1,28 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'home/faq.css' %}">
+
+<div class="faq-section">
+    <h1>Privacy Policy</h1>
+    <div class="faq-container">
+        <p>
+            At Our Restaurant, your privacy is very important to us.
+            This Privacy Policy explains how we collect, use, and protect your inforamtion,
+        </p>
+
+        <h3>1. Information We collect</h3>
+        <p>We may collect basic contact details, reservation details, and feedback information.</p>
+
+        <h3>2. How We Use Information</h3>
+        <p>Your data is used to improve our services, proceess reservation, and respond to yourinquiries.</p>
+
+        <h3>3. Data Protection</h3>
+        <p>We implement security measure to keep your data safe and secure.</p>
+
+        <h3>4. Contact Us</h3>
+        <p>If you have any questions about our privacy policy, please reach out to us via the contact page.</p>
+    </div>
+</div>
+{% endblock %}
