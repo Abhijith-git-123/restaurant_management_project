@@ -201,3 +201,7 @@ def faq(request):
     ] 
 
     return render(request, "faq.html", {"faqs": faqs})
+
+
+def privacy_policy(request):
+    return render(request, 'privacy_policy.html')
