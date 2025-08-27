@@ -33,6 +33,10 @@ def login(request):
 
 
 def home_main(request):
+
+    breadcrumbs = [
+        {"name":"Home", "url": "/"}
+    ]
     data = Restaurant.objects.first()
     menu_items = MenuItem.objects.all()[:6]
 
@@ -53,7 +57,7 @@ def home_main(request):
 
        
     }
-    return render(request, 'home.html',context)
+    return render(request, 'home.html',context,{"breadcrumbs":breadcrumbs})
 
 
 
