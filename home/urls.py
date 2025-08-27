@@ -11,7 +11,8 @@ urlpatterns = [
     path('contact_us',views.contact_us,name="contact_us"),
     path('contact_us_post',views.contact_us_post,name="contact_us_post"),
     path('reservation',views.reservation,name = "reservation"),
-    path('feedback',views.feedback, name = 'feedback')
+    path('feedback',views.feedback, name = 'feedback'),
+    path('privacy-policy/', privacy_policy, name='privacy_policy')
 
     
 ]
