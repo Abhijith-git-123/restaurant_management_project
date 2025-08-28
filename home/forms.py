@@ -3,7 +3,7 @@ from .models import feedback
 
 class FeedbackForm(forms.ModelForm):
     class = feedback
-    field = ['comment']
+    field = ['name','comment']
 
     widget = {
         'comment':forms.Textarea(attrs = {'row':5,'placeholder':'enter your feedback..'})
