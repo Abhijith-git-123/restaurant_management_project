@@ -37,11 +37,12 @@ class Restaurant(models.Model):
 
 
 class feedback(models.Model):
+    name = moels.CharField(max_length=100)
     comment = models.TextField()
     submitted_at = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):
-        return self.submitted_at
+        return self.name
 
 
 class contact(models.Model):
